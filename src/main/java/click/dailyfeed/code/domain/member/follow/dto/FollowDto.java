@@ -1,6 +1,6 @@
 package click.dailyfeed.code.domain.member.follow.dto;
 
-import click.dailyfeed.code.domain.feed.post.type.PostActivityType;
+import click.dailyfeed.code.domain.contents.post.type.PostActivityType;
 import lombok.*;
 
 import java.time.LocalDateTime;
