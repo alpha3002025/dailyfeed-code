@@ -1,0 +1,85 @@
+package click.dailyfeed.code.domain.member.follow.dto;
+
+import click.dailyfeed.code.domain.feed.post.type.PostActivityType;
+import lombok.*;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+public class FollowDto {
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class Follower {
+        private Long memberId;
+        private String name;
+        private String email;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class Following {
+        private Long memberId;
+        private String name;
+        private String email;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class Follow {
+        List<Follower> followers;
+        List<Following> followings;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class FollowingActivity {
+        private Long memberId;
+        private Long postId;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class FollowActivityDto {
+        private Long followingMemberId;
+        private String followingMemberName;
+        private Long postId;
+        private PostActivityType activityType;
+        private LocalDateTime lastModifiedDate;
+
+        public static FollowActivityDto of(Long followingMemberId, String followingMemberName, Long postId, PostActivityType activityType, LocalDateTime lastModifiedDate){
+            return FollowActivityDto.builder()
+                    .followingMemberId(followingMemberId)
+                    .followingMemberName(followingMemberName)
+                    .postId(postId)
+                    .activityType(activityType)
+                    .lastModifiedDate(lastModifiedDate)
+                    .build();
+        }
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class FollowRequest {
+        private Long memberIdToFollow;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class UnfollowRequest {
+        private Long memberIdToUnfollow;
+    }
+}
