@@ -94,5 +94,24 @@ public class CommentDto {
         }
     }
 
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class CommentSearchResult {
+        private Long pk;
+        private Long parentPk;
+        private Long postPk;
+        private String content;
+        private String author;
+        private String path;
+        private Integer depth;
 
+        private LocalDateTime createdAt;
+        private LocalDateTime updatedAt;
+        private Boolean deleted;
+
+        private Integer replyCount; // 자식 댓글 수
+        private Integer totalReplies; // 전체 하위 댓글 수
+    }
 }
