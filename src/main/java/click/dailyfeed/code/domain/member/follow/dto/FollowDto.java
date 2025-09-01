@@ -40,7 +40,7 @@ public class FollowDto {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    public static class FollowingActivity {
+    public static class LatestPost {
         private Long memberId;
         private Long postId;
     }
