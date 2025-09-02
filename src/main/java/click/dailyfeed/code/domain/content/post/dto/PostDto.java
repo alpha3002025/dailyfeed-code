@@ -1,5 +1,6 @@
 package click.dailyfeed.code.domain.content.post.dto;
 
+import click.dailyfeed.code.domain.content.post.type.PostActivityType;
 import click.dailyfeed.code.domain.content.post.type.PostSortType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -75,6 +76,19 @@ public class PostDto {
         private Long likeCount;
         private Integer commentCount;
         private LocalDateTime createdAt;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class PostActivityEvent { // MongoDB에서 읽어들일때는 PostActivityType = DELETED 가 아닌 데이터 + followingId = ?, Sort = UpdatedAt DESC 을 Paging
+        private Long memberId;
+        private Long followingId;
+        private Long postId;
+        private PostActivityType postActivityType;
+        private LocalDateTime createdAt;
+        private LocalDateTime updatedAt;
     }
 
     @Getter
