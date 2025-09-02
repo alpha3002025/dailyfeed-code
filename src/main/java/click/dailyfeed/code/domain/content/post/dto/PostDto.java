@@ -81,6 +81,22 @@ public class PostDto {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class PostSearchResult {
+        private Long postPk;
+        private String title;
+        private String content;
+        private LocalDateTime createdAt;
+        private LocalDateTime updatedAt;
+        private Integer commentCount;
+        private Boolean isCurrent;
+        private Integer viewCount;
+        private Integer version;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class PostSearchCriteria {
         private String keyword;        // 제목/내용 검색 키워드
         private String title;          // 제목 검색
