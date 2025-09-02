@@ -50,8 +50,8 @@ public class PostDto {
         private Long viewCount;
         private Long likeCount;
         private Integer commentCount;
-        private LocalDateTime createdDate;
-        private LocalDateTime lastModifiedDate;
+        private LocalDateTime createdAt;
+        private LocalDateTime updatedAt;
 
         public void updateAuthorName(String authorName) {
             this.authorName = authorName;

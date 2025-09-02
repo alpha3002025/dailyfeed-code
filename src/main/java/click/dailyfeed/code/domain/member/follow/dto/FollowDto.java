@@ -54,15 +54,15 @@ public class FollowDto {
         private String followingMemberName;
         private Long postId;
         private PostActivityType activityType;
-        private LocalDateTime lastModifiedDate;
+        private LocalDateTime updatedAt;
 
-        public static FollowActivityDto of(Long followingMemberId, String followingMemberName, Long postId, PostActivityType activityType, LocalDateTime lastModifiedDate){
+        public static FollowActivityDto of(Long followingMemberId, String followingMemberName, Long postId, PostActivityType activityType, LocalDateTime updatedAt){
             return FollowActivityDto.builder()
                     .followingMemberId(followingMemberId)
                     .followingMemberName(followingMemberName)
                     .postId(postId)
                     .activityType(activityType)
-                    .lastModifiedDate(lastModifiedDate)
+                    .updatedAt(updatedAt)
                     .build();
         }
     }

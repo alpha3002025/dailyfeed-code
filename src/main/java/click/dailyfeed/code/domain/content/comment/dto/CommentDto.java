@@ -52,8 +52,8 @@ public class CommentDto {
         private Long parentId;
         private Integer depth;
         private List<Comment> children;
-        private LocalDateTime createdDate;
-        private LocalDateTime lastModifiedDate;
+        private LocalDateTime createdAt;
+        private LocalDateTime updatedAt;
         private MemberDto.Member author;
 
         public void updateAuthor(MemberDto.Member author) {
@@ -87,7 +87,7 @@ public class CommentDto {
         private Integer depth;
         private Long likeCount;
         private int childrenCount;
-        private LocalDateTime createdDate;
+        private LocalDateTime createdAt;
 
         public void updateAuthor(MemberDto.Member author) {
             this.author = author;
