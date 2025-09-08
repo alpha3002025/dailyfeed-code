@@ -9,6 +9,7 @@ import java.util.Map;
 @Getter
 @AllArgsConstructor
 public enum MemberExceptionCode {
+    MEMBER_ALREADY_EXISTS("이미 존재하는 사용자입니다", "MEMBER_ALREADY_EXISTS", 400),
     MEMBER_NOT_FOUND("존재하지 않는 사용자입니다", "MEMBER_NOT_FOUND", 404),
     MEMBER_API_CONNECTION_ERROR("계정 정보 조회 중 네트워크 오류가 발생했습니다", "MEMBER_API_CONNECTION_ERROR", 503),
     MEMBER_UNDEFINED_ERROR("잠시 후 다시 시도해주시기 바랍니다.", "MEMBER_UNDEFINED_ERROR", 500);
