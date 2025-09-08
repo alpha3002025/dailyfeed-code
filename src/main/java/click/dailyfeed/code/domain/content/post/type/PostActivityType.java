@@ -8,7 +8,8 @@ import lombok.Getter;
 public enum PostActivityType {
     CREATE("CREATE"),
     UPDATE("UPDATE"),
-    DELETE("DELETE");
+    SOFT_DELETE("SOFT_DELETE"),
+    HARD_DELETE("HARD_DELETE");
 
     private final String activityName;
 }
