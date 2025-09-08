@@ -1,5 +1,6 @@
 package click.dailyfeed.code.domain.member.member.dto;
 
+import click.dailyfeed.code.domain.member.member.type.MemberActivityType;
 import lombok.*;
 
 import java.util.Date;
@@ -34,6 +35,15 @@ public class MemberDto {
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class MembersBulkRequest {
         private List<Long> ids;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class MemberActivity{
+        private Long id;
+        private MemberActivityType activityType;
     }
 
 }

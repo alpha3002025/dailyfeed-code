@@ -49,15 +49,15 @@ public class FollowDto {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    public static class FollowActivityDto {
+    public static class FollowActivity {
         private Long followingMemberId;
         private String followingMemberName;
         private Long postId;
         private PostActivityType activityType;
         private LocalDateTime updatedAt;
 
-        public static FollowActivityDto of(Long followingMemberId, String followingMemberName, Long postId, PostActivityType activityType, LocalDateTime updatedAt){
-            return FollowActivityDto.builder()
+        public static FollowActivity of(Long followingMemberId, String followingMemberName, Long postId, PostActivityType activityType, LocalDateTime updatedAt){
+            return FollowActivity.builder()
                     .followingMemberId(followingMemberId)
                     .followingMemberName(followingMemberName)
                     .postId(postId)
