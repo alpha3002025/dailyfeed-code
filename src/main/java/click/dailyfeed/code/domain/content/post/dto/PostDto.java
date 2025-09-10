@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 public class PostDto {
     @Getter
@@ -35,6 +36,14 @@ public class PostDto {
         @NotBlank(message = "내용은 필수입니다")
         @Size(max = 5000, message = "제목은 5000자 이하여야 합니다")
         private String content;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class PostsBulkRequest {
+        private Set<Long> ids;
     }
 
     @Getter
