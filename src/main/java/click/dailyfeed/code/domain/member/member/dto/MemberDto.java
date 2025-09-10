@@ -38,8 +38,8 @@ public class MemberDto {
         private Long id;
         private String name;
         private String email;
-        private Integer followerCount;
-        private Integer followingCount;
+        private Long followerCount;
+        private Long followingCount;
     }
 
     @Getter
@@ -47,6 +47,7 @@ public class MemberDto {
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class MembersBulkRequest {
+        // TODO : BulkRequest 내의 Id List 의 Max 사이즈 결정 (validation) !! 🫡
         private List<Long> ids;
     }
 
