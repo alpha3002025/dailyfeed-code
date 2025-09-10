@@ -1,6 +1,7 @@
 package click.dailyfeed.code.domain.member.follow.dto;
 
 import click.dailyfeed.code.domain.content.post.type.PostActivityType;
+import click.dailyfeed.code.global.web.response.DailyfeedPage;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -31,9 +32,9 @@ public class FollowDto {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    public static class Follow {
-        List<Follower> followers;
-        List<Following> followings;
+    public static class FollowPage {
+        DailyfeedPage<Follower> followers;
+        DailyfeedPage<Following> followings;
     }
 
     @Getter
