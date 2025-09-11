@@ -1,5 +1,6 @@
 package click.dailyfeed.code.domain.member.member.dto;
 
+import click.dailyfeed.code.domain.member.member.annotation.MaxIdsLimit;
 import click.dailyfeed.code.domain.member.member.type.MemberActivityType;
 import lombok.*;
 
@@ -47,7 +48,7 @@ public class MemberDto {
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class MembersIdsQuery {
-        // TODO : BulkRequest 내의 Id List 의 Max 사이즈 결정 (validation) !! 🫡
+        @MaxIdsLimit(value = 1000, message = "허용되는 조회 건수를 초과했습니다.")
         private List<Long> ids;
     }
 
@@ -59,5 +60,4 @@ public class MemberDto {
         private Long id;
         private MemberActivityType activityType;
     }
-
 }
