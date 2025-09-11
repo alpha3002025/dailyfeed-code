@@ -46,7 +46,7 @@ public class MemberDto {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    public static class MembersBulkRequest {
+    public static class MembersIdsQuery {
         // TODO : BulkRequest 내의 Id List 의 Max 사이즈 결정 (validation) !! 🫡
         private List<Long> ids;
     }
