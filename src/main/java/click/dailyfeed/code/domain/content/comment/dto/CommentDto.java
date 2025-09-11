@@ -54,17 +54,20 @@ public class CommentDto {
         private List<Comment> children;
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
-        private MemberDto.Member author;
 
         public void updateAuthor(MemberDto.Member author) {
-            this.author = author;
+            this.authorId = author.getId();
+            this.authorName = author.getName();
+            this.authorEmail = author.getEmail();
         }
 
         public void updateAuthorRecursively(Map<Long, MemberDto.Member> authorMap) {
             // 현재 댓글의 작성자 정보 설정
             MemberDto.Member author = authorMap.get(this.authorId);
             if (author != null) {
-                this.author = author;
+                this.authorId = author.getId();
+                this.authorName = author.getName();
+                this.authorEmail = author.getEmail();
             }
 
             // 자식 댓글들의 작성자 정보도 설정
