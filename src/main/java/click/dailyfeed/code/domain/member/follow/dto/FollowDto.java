@@ -1,6 +1,7 @@
 package click.dailyfeed.code.domain.member.follow.dto;
 
 import click.dailyfeed.code.domain.content.post.type.PostActivityType;
+import click.dailyfeed.code.domain.member.member.dto.MemberProfileDto;
 import click.dailyfeed.code.global.web.response.DailyfeedScrollPage;
 import lombok.*;
 
@@ -15,6 +16,7 @@ public class FollowDto {
         private Long memberId;
         private String name;
         private String email;
+        private MemberProfileDto.Summary profileSummary;
     }
 
     @Getter
@@ -25,6 +27,7 @@ public class FollowDto {
         private Long memberId;
         private String name;
         private String email;
+        private MemberProfileDto.Summary profileSummary;
     }
 
     @Getter
@@ -32,17 +35,8 @@ public class FollowDto {
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class FollowScrollPage {
-        DailyfeedScrollPage<Follower> followers;
-        DailyfeedScrollPage<Following> followings;
-    }
-
-    @Getter
-    @Builder
-    @AllArgsConstructor
-    @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    public static class LatestPost {
-        private Long memberId;
-        private Long postId;
+        DailyfeedScrollPage<MemberProfileDto.Summary> followers;
+        DailyfeedScrollPage<MemberProfileDto.Summary> followings;
     }
 
     @Getter
