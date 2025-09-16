@@ -1,5 +1,7 @@
 package click.dailyfeed.code.domain.member.member.type.data;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -20,13 +22,19 @@ public enum CountryCode {
     private final String code;
     private final String displayName;
 
+    @JsonValue
+    public String getJsonValue(){
+        return code;
+    }
+
+    @JsonCreator
     public static CountryCode fromCode(String code) {
         if (code == null) {
             return null;
         }
 
         for (CountryCode countryCode : values()) {
-            if (countryCode.code.equals(code)) {
+            if (countryCode.code.equals(code) || countryCode.name().equals(code)) {
                 return countryCode;
             }
         }
