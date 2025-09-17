@@ -57,7 +57,7 @@ public class MemberProfileDto {
         private Long memberId;
         private Long id;
         private String memberName;
-        private String handle;
+        private String memberHandle;
         private String displayName;
         private VerificationStatus verificationStatus;
         private String avatarUrl;
@@ -68,7 +68,7 @@ public class MemberProfileDto {
                     .memberId(profile.getMemberId())
                     .id(profile.getId())
                     .memberName(profile.getMemberName())
-                    .handle(profile.getHandle())
+                    .memberHandle(profile.getHandle())
                     .displayName(profile.getDisplayName())
                     .verificationStatus(profile.getVerificationStatus())
                     .updatedAt(profile.getUpdatedAt())

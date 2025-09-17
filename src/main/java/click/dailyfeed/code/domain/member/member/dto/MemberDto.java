@@ -30,7 +30,6 @@ public class MemberDto {
         private String email;
     }
 
-    // TODO : 결정을 아직 못했다. 그래서 일단은 MemberProfile 이라는 이름으로 정해두었다.
     @Getter
     @Builder
     @AllArgsConstructor

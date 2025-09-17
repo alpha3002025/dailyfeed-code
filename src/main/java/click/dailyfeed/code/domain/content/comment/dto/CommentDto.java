@@ -1,6 +1,8 @@
 package click.dailyfeed.code.domain.content.comment.dto;
 
-import click.dailyfeed.code.domain.member.member.dto.MemberDto;
+import click.dailyfeed.code.domain.content.comment.type.CommentActivityType;
+import click.dailyfeed.code.domain.content.comment.type.CommentLikeType;
+import click.dailyfeed.code.domain.member.member.dto.MemberProfileDto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -47,7 +49,7 @@ public class CommentDto {
         private String content;
         private Long authorId;
         private String authorName;
-        private String authorEmail;
+        private String authorHandle;
         private Long postId;
         private Long parentId;
         private Integer depth;
@@ -55,19 +57,19 @@ public class CommentDto {
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
 
-        public void updateAuthor(MemberDto.Member author) {
+        public void updateAuthor(MemberProfileDto.Summary author) {
             this.authorId = author.getId();
-            this.authorName = author.getName();
-            this.authorEmail = author.getEmail();
+            this.authorName = author.getMemberName();
+            this.authorHandle = author.getMemberHandle();
         }
 
-        public void updateAuthorRecursively(Map<Long, MemberDto.Member> authorMap) {
+        public void updateAuthorRecursively(Map<Long, MemberProfileDto.Summary> authorMap) {
             // 현재 댓글의 작성자 정보 설정
-            MemberDto.Member author = authorMap.get(this.authorId);
+            MemberProfileDto.Summary author = authorMap.get(this.authorId);
             if (author != null) {
                 this.authorId = author.getId();
-                this.authorName = author.getName();
-                this.authorEmail = author.getEmail();
+                this.authorName = author.getMemberName();
+                this.authorHandle = author.getMemberHandle();
             }
 
             // 자식 댓글들의 작성자 정보도 설정
@@ -83,7 +85,7 @@ public class CommentDto {
         private Long id;
         private String content;
         private Long authorId;
-        private MemberDto.Member author;
+        private MemberProfileDto.Summary author;
         private Long postId;
         private String postTitle; // 게시글 제목
         private Long parentId;
@@ -92,7 +94,7 @@ public class CommentDto {
         private int childrenCount;
         private LocalDateTime createdAt;
 
-        public void updateAuthor(MemberDto.Member author) {
+        public void updateAuthor(MemberProfileDto.Summary author) {
             this.author = author;
         }
     }
@@ -113,5 +115,29 @@ public class CommentDto {
         private LocalDateTime updatedAt;
         private Integer replyCount; // 자식 댓글 수
         private Integer totalReplies; // 전체 하위 댓글 수
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class CommentActivityEvent { // MongoDB에서 읽어들일때는 PostActivityType = DELETED 가 아닌 데이터 + followingId = ?, Sort = UpdatedAt DESC 을 Paging
+        private Long memberId;
+        private Long commentId;
+        private CommentActivityType commentActivityType;
+        private LocalDateTime createdAt;
+        private LocalDateTime updatedAt;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class LikeActivityEvent { // MongoDB에서 읽어들일때는 PostActivityType = DELETED 가 아닌 데이터 + followingId = ?, Sort = UpdatedAt DESC 을 Paging
+        private Long memberId;
+        private Long commentId;
+        private CommentLikeType commentLikeType;
+        private LocalDateTime createdAt;
+        private LocalDateTime updatedAt;
     }
 }
