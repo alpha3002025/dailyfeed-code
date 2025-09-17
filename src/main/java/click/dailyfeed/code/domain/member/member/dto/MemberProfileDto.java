@@ -31,13 +31,19 @@ public class MemberProfileDto {
         private String websiteUrl;
         private LocalDate birthDate;
         private GenderType gender;
+        @Builder.Default
         private String timezone = "UTC";
+        @Builder.Default
         private String languageCode = "en";
         private CountryCode countryCode;
+        @Builder.Default
         private VerificationStatus verificationStatus = VerificationStatus.NONE;
+        @Builder.Default
         private PrivacyLevel privacyLevel = PrivacyLevel.PUBLIC;
+        @Builder.Default
         private Integer profileCompletionScore = 0;
-        private Boolean isActive = true;
+        @Builder.Default
+        private Boolean isActive = Boolean.TRUE;
         private String avatarUrl;
         private String coverUrl;
         private LocalDateTime createdAt;
@@ -176,7 +182,8 @@ public class MemberProfileDto {
     public static class HandleChangeRequest {
 
         @NotBlank(message = "새 핸들은 필수입니다")
-        @Pattern(regexp = "^[a-zA-Z0-9_]{3,50}$",
+//        @Pattern(regexp = "^[a-zA-Z0-9_]{3,50}$",
+        @Pattern(regexp = MemberProfileValidation.HandleValidation.PATTERN,
                 message = "핸들은 영문, 숫자, 언더스코어만 사용 가능하며 3-50자여야 합니다")
         private String newHandle;
 
