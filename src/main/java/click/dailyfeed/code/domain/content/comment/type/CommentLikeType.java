@@ -7,6 +7,6 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum CommentLikeType {
     LIKE("LIKE"),
-    DISLIKE("CANCEL");
+    CANCEL("CANCEL");
     private final String likeType;
 }
