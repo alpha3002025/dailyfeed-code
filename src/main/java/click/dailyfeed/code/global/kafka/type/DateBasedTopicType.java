@@ -14,6 +14,9 @@ public enum DateBasedTopicType {
 
     private final String topicPrefix;
 
+    public static final String POST_LIKE_ACTIVITY_PATTERN = "post-like-activity-.*";
+    public static final String COMMENT_LIKE_ACTIVITY_PATTERN = "comment-like-activity-.*";
+
     DateBasedTopicType(String topicPrefix) {
         this.topicPrefix = topicPrefix;
     }
@@ -23,5 +26,17 @@ public enum DateBasedTopicType {
     public String generateTopicName(LocalDateTime now){
         String currentDateStr = now.format(DATE_FORMATTER);
         return topicPrefix + currentDateStr;
+    }
+
+    public String extractDateFromTopicName(String topicName) {
+        String prefix = topicPrefix;
+        if (topicName.startsWith(prefix)) {
+            return topicName.substring(prefix.length());
+        }
+        return null;
+    }
+
+    public String getTopicPattern(){
+        return topicPrefix + ".*";
     }
 }
