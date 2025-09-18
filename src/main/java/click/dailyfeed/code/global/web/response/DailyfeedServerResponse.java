@@ -10,5 +10,5 @@ import lombok.*;
 public class DailyfeedServerResponse<T> {
     private Integer status;
     private ResponseSuccessCode result;
-    private T data;
+    private T content;
 }
