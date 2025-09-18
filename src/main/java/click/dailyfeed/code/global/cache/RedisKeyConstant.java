@@ -2,7 +2,7 @@ package click.dailyfeed.code.global.cache;
 
 import java.util.List;
 
-public class CacheKeyConstant {
+public class RedisKeyConstant {
     public static class PostService {
         public static final String INTERNAL_LIST_GET_POST_LIST_BY_IDS_IN = "content-svc:post-service:internal:list:getPostListByIdsIn";
         public static final String WEB_GET_POST_BY_ID = "content-svc:post-service:info:getPostById";
@@ -30,6 +30,23 @@ public class CacheKeyConstant {
         public static final List<String> GET_PAGE_CACHE_LIST = List.of(
                 WEB_GET_POSTS_BY_AUTHOR,
                 WEB_GET_POSTS_ORDER_BY_COMMENT_COUNT
+        );
+    }
+
+    public static class TimelineService {
+        public static final String WEB_GET_TIMELINE_ITEMS_DEFAULT = "timeline-svc:timeline-pull-service:followingsActivities";
+
+        public static final List<String> SEARCH_CHACHE_LIST = List.of(
+        );
+
+        public static final List<String> STATISTICS_CACHE_LIST = List.of(
+        );
+
+        public static final List<String> GET_ITEM_BY_ID_CACHE_LIST = List.of(
+        );
+
+        public static final List<String> GET_PAGE_CACHE_LIST = List.of(
+                WEB_GET_TIMELINE_ITEMS_DEFAULT
         );
     }
 
