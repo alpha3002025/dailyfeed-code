@@ -1,5 +1,6 @@
 package click.dailyfeed.code.global.web.response;
 
+import click.dailyfeed.code.global.web.code.ResponseSuccessCode;
 import lombok.*;
 
 @Getter
@@ -7,8 +8,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class DailyfeedServerResponse<T> {
-    private String statusCode;
-    private String ok;
-    private String reason;
+    private Integer status;
+    private ResponseSuccessCode result;
     private T data;
 }

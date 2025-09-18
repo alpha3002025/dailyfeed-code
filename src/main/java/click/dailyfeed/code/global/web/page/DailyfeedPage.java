@@ -1,4 +1,4 @@
-package click.dailyfeed.code.global.web.response;
+package click.dailyfeed.code.global.web.page;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

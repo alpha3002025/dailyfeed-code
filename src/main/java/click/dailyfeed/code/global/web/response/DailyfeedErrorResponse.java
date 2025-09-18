@@ -1,5 +1,6 @@
 package click.dailyfeed.code.global.web.response;
 
+import click.dailyfeed.code.global.web.code.ResponseSuccessCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,19 +9,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DailyfeedErrorResponse {
+    private Integer statusCode;
+    private ResponseSuccessCode resultCode;
     private String message;
-    private String reason;
-    private Integer code;
-    private String timestamp;
     private String path;
 
-    public static DailyfeedErrorResponse of(String message, String reason, Integer code, String path) {
-        return new DailyfeedErrorResponse(
-                message,
-                reason,
-                code,
-                java.time.LocalDateTime.now().toString(),
-                path
-        );
+    public static DailyfeedErrorResponse of(Integer statusCode, ResponseSuccessCode resultCode, String message, String path) {
+        return new DailyfeedErrorResponse(statusCode, resultCode, message, path);
     }
 }

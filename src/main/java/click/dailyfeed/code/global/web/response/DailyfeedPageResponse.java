@@ -1,5 +1,6 @@
 package click.dailyfeed.code.global.web.response;
 
+import click.dailyfeed.code.global.web.page.DailyfeedPage;
 import lombok.*;
 
 @Getter

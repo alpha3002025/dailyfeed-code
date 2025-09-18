@@ -2,7 +2,7 @@ package click.dailyfeed.code.domain.member.follow.dto;
 
 import click.dailyfeed.code.domain.content.post.type.PostActivityType;
 import click.dailyfeed.code.domain.member.member.dto.MemberProfileDto;
-import click.dailyfeed.code.global.web.response.DailyfeedScrollPage;
+import click.dailyfeed.code.global.web.page.DailyfeedScrollPage;
 import lombok.*;
 
 import java.time.LocalDateTime;
