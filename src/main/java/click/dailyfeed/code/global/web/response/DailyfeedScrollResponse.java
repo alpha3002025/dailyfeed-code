@@ -1,5 +1,6 @@
 package click.dailyfeed.code.global.web.response;
 
+import click.dailyfeed.code.global.web.code.ResponseSuccessCode;
 import lombok.*;
 
 @Getter
@@ -8,7 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 public class DailyfeedScrollResponse<T> {
     private T content;
-    private String statusCode;
-    private String ok;
-    private String reason;
+    private Integer status;
+    private ResponseSuccessCode result;
 }

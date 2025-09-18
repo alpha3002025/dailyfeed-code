@@ -27,7 +27,6 @@ public class MemberDto {
     public static class Member {
         private Long id;
         private String name;
-        private String email;
     }
 
     @Getter
