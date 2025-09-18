@@ -33,7 +33,7 @@ public class RedisKeyConstant {
         );
     }
 
-    public static class TimelineService {
+    public static class TimelinePullService {
         public static final String WEB_GET_TIMELINE_ITEMS_DEFAULT = "timeline-svc:timeline-pull-service:followingsActivities";
 
         public static final List<String> SEARCH_CHACHE_LIST = List.of(
