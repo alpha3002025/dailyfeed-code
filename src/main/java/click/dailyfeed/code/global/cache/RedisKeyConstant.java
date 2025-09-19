@@ -114,16 +114,16 @@ public class RedisKeyConstant {
         // page (수정 예정) TODO
         public static final String WEB_GET_TIMELINE_ITEMS_DEFAULT = "timeline-svc:timeline-pull-service:followingsActivities";
 
-        public static final List<String> SEARCH_CHACHE_LIST = List.of(
+        public static final Set<String> SEARCH_LIST = Set.of(
         );
 
-        public static final List<String> STATISTICS_CACHE_LIST = List.of(
+        public static final Set<String> STATISTICS_LIST = Set.of(
         );
 
-        public static final List<String> GET_ITEM_BY_ID_CACHE_LIST = List.of(
+        public static final Set<String> GET_ITEM_BY_ID_CACHE_LIST = Set.of(
         );
 
-        public static final List<String> GET_PAGE_CACHE_LIST = List.of(
+        public static final Set<String> GET_PAGE_KEYS = Set.of(
                 WEB_GET_TIMELINE_ITEMS_DEFAULT
         );
     }
