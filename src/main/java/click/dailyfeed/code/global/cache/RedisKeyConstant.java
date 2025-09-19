@@ -1,6 +1,7 @@
 package click.dailyfeed.code.global.cache;
 
 import java.util.List;
+import java.util.Set;
 
 public class RedisKeyConstant {
     public static class MemberRedisService {
@@ -13,11 +14,11 @@ public class RedisKeyConstant {
         /// list
         public static final String INTERNAL_LIST_MEMBERS_BY_IDS_IN = "member-svc:member-redis-service:internal:list:findMembersByIdsIn";
 
-        public static final List<String> INTERNAL_QUERY_LIST_BY_IDS_IN = List.of(
+        public static final Set<String> INTERNAL_QUERY_LIST_BY_IDS_IN_KEYS = Set.of(
                 INTERNAL_LIST_MEMBERS_BY_IDS_IN
         );
 
-        public static final List<String> GET_ITEM_BY_ID_CACHE_LIST = List.of(
+        public static final Set<String> GET_ITEM_BY_ID_CACHE_KEYS = Set.of(
                 WEB_GET_MEMBER_BY_ID, WEB_GET_MEMBER_PROFILE_BY_ID, WEB_GET_MEMBER_PROFILE_SUMMARY_BY_ID
         );
     }
@@ -33,15 +34,15 @@ public class RedisKeyConstant {
         /// list
         public static final String INTERNAL_LIST_FOLLOWING_MEMBERS_BY_MEMBER_ID = "member-svc:follow-redis-service:internal:list:getFollowingMembers";
 
-        public static final List<String> INTERNAL_QUERY_LIST_BY_IDS_IN = List.of(
+        public static final Set<String> INTERNAL_QUERY_LIST_BY_IDS_IN_KEYS = Set.of(
                 INTERNAL_LIST_FOLLOWING_MEMBERS_BY_MEMBER_ID
         );
 
-        public static final List<String> GET_ITEM_BY_ID_CACHE_LIST = List.of(
+        public static final Set<String> GET_ITEM_BY_ID_CACHE_KEYS = Set.of(
                 WEB_GET_FOLLOW_BY_MEMBER_ID
         );
 
-        public static final List<String> GET_PAGE_CACHE_LIST = List.of(
+        public static final Set<String> GET_PAGE_CACHE_KEYS = Set.of(
                 WEB_PAGE_FOLLOWERS_MORE_BY_MEMBER_ID,
                 WEB_PAGE_FOLLOWINGS_MORE_BY_MEMBER_ID
         );
