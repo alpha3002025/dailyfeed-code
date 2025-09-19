@@ -18,7 +18,7 @@ public class RedisKeyConstant {
                 INTERNAL_LIST_MEMBERS_BY_IDS_IN
         );
 
-        public static final Set<String> GET_ITEM_BY_ID_CACHE_KEYS = Set.of(
+        public static final Set<String> GET_ITEM_BY_ID_KEYS = Set.of(
                 WEB_GET_MEMBER_BY_ID, WEB_GET_MEMBER_PROFILE_BY_ID, WEB_GET_MEMBER_PROFILE_SUMMARY_BY_ID
         );
     }
