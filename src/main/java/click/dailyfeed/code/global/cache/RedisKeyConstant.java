@@ -1,6 +1,5 @@
 package click.dailyfeed.code.global.cache;
 
-import java.util.List;
 import java.util.Set;
 
 public class RedisKeyConstant {
@@ -38,11 +37,11 @@ public class RedisKeyConstant {
                 INTERNAL_LIST_FOLLOWING_MEMBERS_BY_MEMBER_ID
         );
 
-        public static final Set<String> GET_ITEM_BY_ID_CACHE_KEYS = Set.of(
+        public static final Set<String> GET_ITEM_BY_ID_KEYS = Set.of(
                 WEB_GET_FOLLOW_BY_MEMBER_ID
         );
 
-        public static final Set<String> GET_PAGE_CACHE_KEYS = Set.of(
+        public static final Set<String> GET_PAGE_KEYS = Set.of(
                 WEB_PAGE_FOLLOWERS_MORE_BY_MEMBER_ID,
                 WEB_PAGE_FOLLOWINGS_MORE_BY_MEMBER_ID
         );
