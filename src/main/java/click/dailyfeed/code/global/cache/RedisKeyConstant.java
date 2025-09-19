@@ -63,27 +63,50 @@ public class RedisKeyConstant {
         public static final String WEB_SEARCH_SEARCH_POSTS = "content-svc:post-service:search:searchPosts";
         public static final String WEB_SEARCH_GET_POSTS_BY_DATE_RANGE = "content-svc:post-service:search:getPostsByDateRange";
 
-        public static final List<String> INTERNAL_QUERY_LIST_BY_IDS_IN = List.of(
+        public static final Set<String> INTERNAL_QUERY_LIST_BY_IDS_IN_KEYS = Set.of(
                 INTERNAL_LIST_GET_POST_LIST_BY_IDS_IN
         );
 
-        public static final List<String> SEARCH_CHACHE_LIST = List.of(
+        public static final Set<String> SEARCH_KEYS = Set.of(
                 WEB_SEARCH_SEARCH_POSTS,
                 WEB_SEARCH_GET_POSTS_BY_DATE_RANGE
         );
 
-        public static final List<String> STATISTICS_CACHE_LIST = List.of(
+        public static final Set<String> STATISTICS_KEYS = Set.of(
                 WEB_STATISTICS_GET_POPULAR_POSTS,
                 WEB_STATISTICS_GET_POSTS_BY_RECENT_ACTIVITY
         );
 
-        public static final List<String> GET_ITEM_BY_ID_CACHE_LIST = List.of(
+        public static final Set<String> GET_ITEM_BY_ID_KEYS = Set.of(
                 WEB_GET_POST_BY_ID
         );
 
-        public static final List<String> GET_PAGE_CACHE_LIST = List.of(
+        public static final Set<String> GET_PAGE_KEYS = Set.of(
                 WEB_GET_POSTS_BY_AUTHOR,
                 WEB_GET_POSTS_ORDER_BY_COMMENT_COUNT
+        );
+    }
+
+    public static class CommentService {
+        /// list
+
+        /// get
+        public static final String WEB_GET_COMMENT_BY_ID = "content-svc:comment-service:web:get:getCommentById";
+        /// page
+        public static final String WEB_GET_COMMENTS_BY_MEMBER_ID = "content-svc:comment-service:web:page:getCommentsByMemberId"; // getMyComments, getCommentsByUser
+        public static final String WEB_GET_COMMENTS_BY_POST_ID = "content-svc:comment-service:web:page:getCommentsByPostId"; // getMyComments, getCommentsByUser
+        public static final String WEB_GET_COMMENTS_BY_PARENT_ID = "content-svc:comment-service:web:page:getCommentsByParentId"; // 대댓글
+
+        public static final Set<String> SEARCH_KEYS = Set.of();
+
+        public static final Set<String> STATISTICS_KEYS = Set.of();
+
+        public static final Set<String> GET_ITEM_BY_ID_KEYS = Set.of(
+                WEB_GET_COMMENT_BY_ID
+        );
+
+        public static final Set<String> GET_PAGE_KEYS = Set.of(
+                WEB_GET_COMMENTS_BY_MEMBER_ID, WEB_GET_COMMENTS_BY_POST_ID, WEB_GET_COMMENTS_BY_PARENT_ID
         );
     }
 
