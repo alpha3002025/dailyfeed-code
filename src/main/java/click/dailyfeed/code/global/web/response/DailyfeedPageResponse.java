@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class DailyfeedPageResponse<T> {
-    private DailyfeedPage<T> content;
+    private DailyfeedPage<T> data;
     private Integer status;
     private ResponseSuccessCode result;
 }

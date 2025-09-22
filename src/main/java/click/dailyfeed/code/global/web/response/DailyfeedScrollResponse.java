@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class DailyfeedScrollResponse<T> {
-    private T content;
+    private T data;
     private Integer status;
     private ResponseSuccessCode result;
 }
