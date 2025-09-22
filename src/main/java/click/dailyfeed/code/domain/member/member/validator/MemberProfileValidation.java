@@ -16,7 +16,7 @@ public class MemberProfileValidation {
 
     public static final class PasswordValidation {
 //        public static final String PATTERN = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)(?=.*[@$!%*?&])[A-Za-z\\\\d@$!%*?&]";
-        public static final String PATTERN = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+$";
+        public static final String PATTERN = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]+$";
         public static final int MIN_LENGTH = 8;
         public static final int MAX_LENGTH = 50;
     }
