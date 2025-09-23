@@ -5,6 +5,7 @@ import click.dailyfeed.code.domain.member.member.type.data.GenderType;
 import click.dailyfeed.code.domain.member.member.type.data.PrivacyLevel;
 import click.dailyfeed.code.domain.member.member.type.data.VerificationStatus;
 import click.dailyfeed.code.domain.member.member.validator.MemberProfileValidation;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.hibernate.validator.constraints.URL;
@@ -67,6 +68,7 @@ public class MemberProfileDto {
         private String displayName;
         private VerificationStatus verificationStatus;
         private String avatarUrl;
+        @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
         private LocalDateTime updatedAt;
 
         public static Summary from(MemberProfile profile) {

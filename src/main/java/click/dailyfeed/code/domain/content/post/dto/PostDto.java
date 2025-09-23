@@ -16,12 +16,12 @@ public class PostDto {
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class CreatePostRequest {
-        @NotBlank(message = "제목은 필수입니다")
-        @Size(max = 100, message = "제목은 100자 이하여야 합니다")
+//        @NotBlank(message = "제목은 필수입니다")
+//        @Size(max = 100, message = "제목은 100자 이하여야 합니다")
         private String title;
 
         @NotBlank(message = "내용은 필수입니다")
-        @Size(max = 5000, message = "제목은 5000자 이하여야 합니다")
+        @Size(max = 5000, message = "제목은 50000자 이하여야 합니다")
         private String content;
     }
 
