@@ -3,6 +3,7 @@ package click.dailyfeed.code.domain.content.post.dto;
 import click.dailyfeed.code.domain.content.post.type.PostActivityType;
 import click.dailyfeed.code.domain.content.post.type.PostLikeType;
 import click.dailyfeed.code.domain.content.post.type.PostSortType;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
@@ -61,7 +62,9 @@ public class PostDto {
         private Long viewCount;
         private Long likeCount;
         private Integer commentCount;
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime updatedAt;
     }
 
@@ -77,6 +80,7 @@ public class PostDto {
         private Long viewCount;
         private Long likeCount;
         private Integer commentCount;
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
     }
 
@@ -89,7 +93,9 @@ public class PostDto {
         private Long followingId;
         private Long postId;
         private PostActivityType postActivityType;
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime updatedAt;
     }
 
@@ -101,7 +107,9 @@ public class PostDto {
         private Long memberId;
         private Long postId;
         private PostLikeType postLikeType;
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime updatedAt;
     }
 
@@ -113,7 +121,9 @@ public class PostDto {
         private Long postPk;
         private String title;
         private String content;
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime updatedAt;
         private Integer commentCount;
         private Boolean isCurrent;
