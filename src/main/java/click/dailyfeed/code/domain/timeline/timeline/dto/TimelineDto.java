@@ -13,7 +13,8 @@ public class TimelineDto {
     public static class TimelinePostActivity {
         private String id;
         private Long authorId;
-        private String authorUsername;
+        private String authorName;
+        private String memberHandle;
         private Long postId;
         private String activityType;
         private String title;
