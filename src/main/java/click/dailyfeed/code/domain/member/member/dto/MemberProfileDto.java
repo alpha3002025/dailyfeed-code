@@ -47,7 +47,9 @@ public class MemberProfileDto {
         private Boolean isActive = Boolean.TRUE;
         private String avatarUrl;
         private String coverUrl;
+        @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
         private LocalDateTime createdAt;
+        @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
         private LocalDateTime updatedAt;
         private Long followersCount;
         private Long followingsCount;

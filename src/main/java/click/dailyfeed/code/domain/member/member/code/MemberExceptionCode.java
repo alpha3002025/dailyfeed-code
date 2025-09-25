@@ -14,6 +14,7 @@ public enum MemberExceptionCode {
     MEMBER_NOT_FOUND("존재하지 않는 사용자입니다", "MEMBER_NOT_FOUND", 404),
     MEMBER_PASSWORD_INVALID("유효하지 않은 패스워드입니다", "MEMBER_PASSWORD_INVALID", 403),
     MEMBER_API_CONNECTION_ERROR("계정 정보 조회 중 네트워크 오류가 발생했습니다", "MEMBER_API_CONNECTION_ERROR", 503),
+    FEIGN_SERIALIZE_FAIL("잠시 후 다시 시도해주시기 바랍니다", "FEIGN_SERIALIZE_FAIL", 500),
     MEMBER_UNDEFINED_ERROR("잠시 후 다시 시도해주시기 바랍니다", "MEMBER_UNDEFINED_ERROR", 500);
 
     private final String message;
