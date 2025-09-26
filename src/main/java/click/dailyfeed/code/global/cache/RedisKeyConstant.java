@@ -54,26 +54,18 @@ public class RedisKeyConstant {
         public static final String WEB_GET_POST_BY_ID = "content-svc:post-service:get:getPostById";
         /// page
         public static final String WEB_GET_POSTS_BY_AUTHOR = "content-svc:post-service:page:getPostsByAuthor";
-        /// statistics
-        public static final String WEB_GET_POSTS_ORDER_BY_COMMENT_COUNT = "content-svc:post-service:statistics:getPostsOrderByCommentCount";
-        public static final String WEB_STATISTICS_GET_POPULAR_POSTS = "content-svc:post-service:statistics:getPopularPosts";
-        public static final String WEB_STATISTICS_GET_POSTS_BY_RECENT_ACTIVITY = "content-svc:post-service:statistics:getPostsByRecentActivity";
         /// search
         public static final String WEB_SEARCH_SEARCH_POSTS = "content-svc:post-service:search:searchPosts";
-        public static final String WEB_SEARCH_GET_POSTS_BY_DATE_RANGE = "content-svc:post-service:search:getPostsByDateRange";
 
         public static final Set<String> INTERNAL_QUERY_LIST_BY_IDS_IN_KEYS = Set.of(
                 INTERNAL_LIST_GET_POST_LIST_BY_IDS_IN
         );
 
         public static final Set<String> SEARCH_KEYS = Set.of(
-                WEB_SEARCH_SEARCH_POSTS,
-                WEB_SEARCH_GET_POSTS_BY_DATE_RANGE
+                WEB_SEARCH_SEARCH_POSTS
         );
 
         public static final Set<String> STATISTICS_KEYS = Set.of(
-                WEB_STATISTICS_GET_POPULAR_POSTS,
-                WEB_STATISTICS_GET_POSTS_BY_RECENT_ACTIVITY
         );
 
         public static final Set<String> GET_ITEM_BY_ID_KEYS = Set.of(
@@ -81,8 +73,7 @@ public class RedisKeyConstant {
         );
 
         public static final Set<String> GET_PAGE_KEYS = Set.of(
-                WEB_GET_POSTS_BY_AUTHOR,
-                WEB_GET_POSTS_ORDER_BY_COMMENT_COUNT
+                WEB_GET_POSTS_BY_AUTHOR
         );
     }
 
@@ -110,10 +101,18 @@ public class RedisKeyConstant {
     }
 
     public static class TimelinePullService {
-        // page (수정 예정) TODO
         public static final String WEB_GET_TIMELINE_ITEMS_DEFAULT = "timeline-svc:timeline-pull-service:followingsActivities";
+        /// search
+        public static final String WEB_SEARCH_TIMELINE_ORDER_BY_COMMENT_COUNT_DESC = "timeline-svc:timeline-pull-service:getPostsOrderByCommentCount";
+        public static final String WEB_SEARCH_TIMELINE_ORDER_BY_POPULAR_DESC = "timeline-svc:timeline-pull-service:getPopularPosts";
+        public static final String WEB_SEARCH_TIMELINE_RECENT_ACTIVITY_DESC = "timeline-svc:timeline-pull-service:getPostsByRecentActivity";
+        public static final String WEB_SEARCH_TIMELINE_DATE_RANGE = "timeline-svc:timeline-pull-service:getPostsByDateRange";
 
-        public static final Set<String> SEARCH_LIST = Set.of(
+        public static final Set<String> SEARCH_KEYS = Set.of(
+                WEB_SEARCH_TIMELINE_ORDER_BY_COMMENT_COUNT_DESC,
+                WEB_SEARCH_TIMELINE_ORDER_BY_POPULAR_DESC,
+                WEB_SEARCH_TIMELINE_RECENT_ACTIVITY_DESC,
+                WEB_SEARCH_TIMELINE_DATE_RANGE
         );
 
         public static final Set<String> STATISTICS_LIST = Set.of(
