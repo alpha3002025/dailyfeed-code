@@ -14,7 +14,9 @@ public enum DateBasedTopicType {
 
     private final String topicPrefix;
 
+    public static final String POST_ACTIVITY_PATTERN = "post-activity-.*";
     public static final String POST_LIKE_ACTIVITY_PATTERN = "post-like-activity-.*";
+    public static final String COMMENT_ACTIVITY_PATTERN = "comment-activity-.*";
     public static final String COMMENT_LIKE_ACTIVITY_PATTERN = "comment-like-activity-.*";
 
     DateBasedTopicType(String topicPrefix) {
