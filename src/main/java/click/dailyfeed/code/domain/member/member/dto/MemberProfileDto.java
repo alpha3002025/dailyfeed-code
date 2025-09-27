@@ -12,6 +12,7 @@ import org.hibernate.validator.constraints.URL;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -119,7 +120,8 @@ public class MemberProfileDto {
 
         @URL(message = "URL 형식이 아닙니다")
         @Size(max = 500, message = "previous 썸네일 이미지 URL은 500자를 초과할 수 없습니다")
-        private List<String> previousAvatarUrl; // 이미지 업로드를 여러 번 한 경우에 대해 List 타입으로 지정
+        @Builder.Default
+        private List<String> previousAvatarUrl = new ArrayList<>(); // 이미지 업로드를 여러 번 한 경우에 대해 List 타입으로 지정
 
         @Past(message = "생년월일은 과거 날짜여야 합니다")
         private LocalDate birthDate;
