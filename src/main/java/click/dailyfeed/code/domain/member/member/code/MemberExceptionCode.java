@@ -10,6 +10,7 @@ import java.util.Map;
 @AllArgsConstructor
 public enum MemberExceptionCode {
     MEMBER_ALREADY_EXISTS("이미 존재하는 사용자입니다", "MEMBER_ALREADY_EXISTS", 400),
+    MEMBER_HANDLE_ALREADY_EXISTS("이미 존재하는 handle 입니다", "MEMBER_HANDLE_ALREADY_EXISTS", 400),
     MEMBER_IDS_LIMIT_EXCEEDS("허용되는 조회 건수를 초과했습니다", "MEMBER_IDS_LIMIT_EXCEEDS", 400),
     MEMBER_NOT_FOUND("존재하지 않는 사용자입니다", "MEMBER_NOT_FOUND", 404),
     MEMBER_PASSWORD_INVALID("유효하지 않은 패스워드입니다", "MEMBER_PASSWORD_INVALID", 403),

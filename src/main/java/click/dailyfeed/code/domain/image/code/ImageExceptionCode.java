@@ -9,6 +9,7 @@ public enum ImageExceptionCode {
     CORRUPTED_IMAGE("CORRUPTED_IMAGE", "손상된 이미지는 업로드 불가능합니다", 400),
     THUMBNAIL_PROCESSING_FAIL("THUMBNAIL_PROCESS_FAIL", "썸네일로 생성할 수 없는 이미지입니다", 400),
     IMAGE_PROCESSING_FAIL("IMAGE_PROCESSING_FAIL", "이미지 처리에 실패했습니다", 500),
+    IMAGE_DELETING_FAIL("IMAGE_DELETING_FAIL", "이미지 삭제에 실패했습니다", 500),
     IMAGE_READING_FAIL("IMAGE_READING_FAIL", "이미지 읽기에 실패했습니다", 500),
     IMAGE_CLEANING_UP_FAIL("IMAGE_CLEANING_UP_FAIL", "이미지 처리에 실패했습니다. 잠시후 다시 시도해주세요", 500),
     EMPTY_IMAGE_FILE("EMPTY_IMAGE_FILE", "비어있는 이미지는 업로드할 수 없습니다", 400),
