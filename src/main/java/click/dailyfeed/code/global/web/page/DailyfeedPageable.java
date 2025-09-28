@@ -14,11 +14,11 @@ public class DailyfeedPageable {
     @Builder(builderMethodName = "allArgsBuilder", builderClassName = "AllArgsBuilder")
     @JsonCreator
     public DailyfeedPageable(
-            @JsonProperty("page") int page,
-            @JsonProperty("size") int size,
+            @JsonProperty("page") Integer page,
+            @JsonProperty("size") Integer size,
             @JsonProperty("sort") String sort) {
-        this.page = page;
-        this.size = size;
+        this.page = page != null ? page : 0;
+        this.size = size != null ? size : 10;
         this.sort = sort;
     }
 
