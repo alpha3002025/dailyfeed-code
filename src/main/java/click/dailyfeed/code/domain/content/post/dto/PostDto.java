@@ -59,6 +59,7 @@ public class PostDto {
         private Long authorId;
         private String authorName;
         private String authorHandle;
+        private String authorAvatarUrl;
         private Long viewCount;
         private Long likeCount;
         private Integer commentCount;
