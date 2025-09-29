@@ -14,7 +14,6 @@ public class FollowDto {
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class Follower {
         private Long memberId;
-        private String name;
         private String email;
         private MemberProfileDto.Summary profileSummary;
     }
@@ -25,7 +24,6 @@ public class FollowDto {
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class Following {
         private Long memberId;
-        private String name;
         private String email;
         private MemberProfileDto.Summary profileSummary;
     }
