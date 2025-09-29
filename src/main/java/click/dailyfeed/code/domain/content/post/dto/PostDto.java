@@ -126,10 +126,6 @@ public class PostDto {
         private LocalDateTime createdAt;
         @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime updatedAt;
-        private Integer commentCount;
-        private Boolean isCurrent;
-        private Integer viewCount;
-        private Integer version;
     }
 
     @Getter
