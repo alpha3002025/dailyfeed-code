@@ -60,9 +60,9 @@ public class PostDto {
         private String authorName;
         private String authorHandle;
         private String authorAvatarUrl;
-        private Long viewCount;
+        private Long viewCount; // TODO SEASON 2
         private Long likeCount;
-        private Integer commentCount;
+        private Long commentCount;
         @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
         @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
