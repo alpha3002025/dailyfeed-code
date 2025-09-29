@@ -11,6 +11,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class CommentDto {
 
@@ -115,6 +116,24 @@ public class CommentDto {
         private LocalDateTime updatedAt;
         private Integer replyCount; // 자식 댓글 수
         private Integer totalReplies; // 전체 하위 댓글 수
+    }
+
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class CommentLikeCountBulkRequest {
+        private Set<Long> commentIds;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class CommentLikeCountStatistics {
+        private Integer likeCount;
+        private Long commentPk;
     }
 
     @Getter

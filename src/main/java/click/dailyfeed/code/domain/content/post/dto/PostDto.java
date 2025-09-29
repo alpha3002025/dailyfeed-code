@@ -114,6 +114,42 @@ public class PostDto {
         private LocalDateTime updatedAt;
     }
 
+    /// 통계
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class PostLikeCountQueryBulkRequest {
+        private Set<Long> postPks;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class PostLikeCountStatistics {
+        private Long postPk;
+        private Integer likeCount;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class PostCommentCountQueryBulkRequest {
+        private Set<Long> postPks;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class PostCommentCountStatistics {
+        private Long postPk;
+        private Integer commentCount;
+    }
+
+    /// 삭제 예정 //////
     @Getter
     @Builder
     @AllArgsConstructor

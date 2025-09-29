@@ -6,6 +6,7 @@ import click.dailyfeed.code.global.web.page.DailyfeedScrollPage;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 public class FollowDto {
     @Getter
@@ -73,5 +74,23 @@ public class FollowDto {
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class UnfollowRequest {
         private Long memberIdToUnfollow;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class FollowCountQueryBulkRequest {
+        Set<Long> toMemberIds;
+    }
+
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class FollowCountStatistics{
+        private Long toMemberId;
+        private Integer followingCount;
     }
 }
