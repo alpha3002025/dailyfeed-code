@@ -11,12 +11,11 @@ public class TimelineDto {
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class TimelinePostActivity {
-        private String id;
         private Long authorId;
         private String authorName;
         private String authorHandle;
         private String authorAvatarUrl;
-        private Long postId;
+        private Long id;
         private String activityType;
         private String title;
         private String content;
