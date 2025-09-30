@@ -146,7 +146,7 @@ public class PostDto {
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class PostCommentCountStatistics {
         private Long postPk;
-        private Integer commentCount;
+        private Long commentCount;
     }
 
     /// 삭제 예정 //////
