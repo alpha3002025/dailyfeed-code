@@ -51,6 +51,7 @@ public class CommentDto {
         private Long authorId;
         private String authorName;
         private String authorHandle;
+        private String authorAvatarUrl;
         private Long postId;
         private Long parentId;
         private Integer depth;
@@ -62,6 +63,7 @@ public class CommentDto {
             this.authorId = author.getId();
             this.authorName = author.getMemberName();
             this.authorHandle = author.getMemberHandle();
+            this.authorAvatarUrl = author.getAvatarUrl();
         }
 
         public void updateAuthorRecursively(Map<Long, MemberProfileDto.Summary> authorMap) {
@@ -71,6 +73,7 @@ public class CommentDto {
                 this.authorId = author.getId();
                 this.authorName = author.getMemberName();
                 this.authorHandle = author.getMemberHandle();
+                this.authorAvatarUrl = author.getAvatarUrl();
             }
 
             // 자식 댓글들의 작성자 정보도 설정
