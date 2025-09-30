@@ -14,7 +14,8 @@ public class TimelineDto {
         private String id;
         private Long authorId;
         private String authorName;
-        private String memberHandle;
+        private String authorHandle;
+        private String authorAvatarUrl;
         private Long postId;
         private String activityType;
         private String title;
