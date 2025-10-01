@@ -25,5 +25,6 @@ public class TimelineDto {
         private Long viewCount;
         private Long likeCount;
         private Long commentCount;
+        private Boolean liked;
     }
 }

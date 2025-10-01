@@ -63,6 +63,7 @@ public class PostDto {
         private Long viewCount; // TODO SEASON 2
         private Long likeCount;
         private Long commentCount;
+        private Boolean liked;
         @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
         @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
