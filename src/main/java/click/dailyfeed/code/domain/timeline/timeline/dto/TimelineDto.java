@@ -22,11 +22,8 @@ public class TimelineDto {
         @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
 
-        // TODO : 아직 결정을 못했다.
-        // Post 정보 (조인된 데이터)
-//        private String postContent;
-//        private Long viewCount;
-//        private Long likeCount;
-
+        private Long viewCount;
+        private Long likeCount;
+        private Long commentCount;
     }
 }
