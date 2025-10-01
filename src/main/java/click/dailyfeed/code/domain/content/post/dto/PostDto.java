@@ -63,6 +63,7 @@ public class PostDto {
         private Long viewCount; // TODO SEASON 2
         private Long likeCount;
         private Long commentCount;
+        private Boolean liked;
         @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         private LocalDateTime createdAt;
         @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -129,7 +130,7 @@ public class PostDto {
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class PostLikeCountStatistics {
         private Long postPk;
-        private Integer likeCount;
+        private Long likeCount;
     }
 
     @Getter
