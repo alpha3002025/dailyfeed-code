@@ -1,6 +1,6 @@
 package click.dailyfeed.code.domain.member.member.transport;
 
-import click.dailyfeed.code.domain.member.activity.type.MemberActivityType;
+import click.dailyfeed.code.domain.activity.type.MemberActivityType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

@@ -1,6 +1,6 @@
-package click.dailyfeed.code.domain.member.activity.exception;
+package click.dailyfeed.code.domain.activity.exception;
 
-import click.dailyfeed.code.domain.member.activity.code.MemberActivityExceptionCode;
+import click.dailyfeed.code.domain.activity.code.MemberActivityExceptionCode;
 
 import java.util.function.Supplier;
 
