@@ -1,4 +1,4 @@
-package click.dailyfeed.code.domain.member.member.transport;
+package click.dailyfeed.code.domain.activity.transport;
 
 import click.dailyfeed.code.domain.activity.type.MemberActivityType;
 import lombok.AllArgsConstructor;
