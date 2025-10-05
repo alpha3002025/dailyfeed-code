@@ -64,22 +64,6 @@ public class FollowDto {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    public static class FollowRequest {
-        private Long memberIdToFollow;
-    }
-
-    @Getter
-    @Builder
-    @AllArgsConstructor
-    @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    public static class UnfollowRequest {
-        private Long memberIdToUnfollow;
-    }
-
-    @Getter
-    @Builder
-    @AllArgsConstructor
-    @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class FollowCountQueryBulkRequest {
         Set<Long> toMemberIds;
     }
