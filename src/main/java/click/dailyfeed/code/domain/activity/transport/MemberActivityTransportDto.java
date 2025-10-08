@@ -13,6 +13,15 @@ public class MemberActivityTransportDto {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
+    public static class MemberActivityMessage {
+        private String key;
+        private MemberActivityEvent event;
+    }
+
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class MemberActivityEvent {
         private Long memberId;
         private Long postId;
