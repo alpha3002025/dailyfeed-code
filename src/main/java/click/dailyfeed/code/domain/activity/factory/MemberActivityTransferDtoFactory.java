@@ -2,6 +2,7 @@ package click.dailyfeed.code.domain.activity.factory;
 
 import click.dailyfeed.code.domain.activity.transport.MemberActivityTransportDto;
 import click.dailyfeed.code.domain.activity.type.MemberActivityType;
+import click.dailyfeed.code.global.cache.RedisKeyPrefix;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -59,12 +60,15 @@ public class MemberActivityTransferDtoFactory {
         switch (activityType) {
             case POST_CREATE -> {
                 return new StringBuffer()
+                        .append(RedisKeyPrefix.MEMBER_ACTIVITY_KAFKA_EVENT.getKeyPrefix())
+                        .append(activityType.getCode()).append("###")
                         .append(event.getPostId()).append("###")
                         .append(event.getMemberId())
                         .toString();
             }
             case POST_UPDATE, POST_DELETE, POST_READ -> {
                 return new StringBuffer()
+                        .append(RedisKeyPrefix.MEMBER_ACTIVITY_KAFKA_EVENT.getKeyPrefix())
                         .append(activityType.getCode()).append("###") // redis 에서 중복 메시지 여부 구분을 위해 추가
                         .append(event.getPostId()).append("###")
                         .append(event.getMemberId()).append("###")
@@ -73,6 +77,7 @@ public class MemberActivityTransferDtoFactory {
             }
             case COMMENT_CREATE -> {
                 return new StringBuffer()
+                        .append(RedisKeyPrefix.MEMBER_ACTIVITY_KAFKA_EVENT.getKeyPrefix())
                         .append(activityType.getCode()).append("###") // redis 에서 중복 메시지 여부 구분을 위해 추가
                         .append(event.getCommentId()).append("###")
                         .append(event.getMemberId())
@@ -80,6 +85,7 @@ public class MemberActivityTransferDtoFactory {
             }
             case COMMENT_UPDATE, COMMENT_DELETE, COMMENT_READ -> {
                 return new StringBuffer()
+                        .append(RedisKeyPrefix.MEMBER_ACTIVITY_KAFKA_EVENT.getKeyPrefix())
                         .append(activityType.getCode()).append("###") // redis 에서 중복 메시지 여부 구분을 위해 추가
                         .append(event.getCommentId()).append("###")
                         .append(event.getMemberId()).append("###")
@@ -88,6 +94,7 @@ public class MemberActivityTransferDtoFactory {
             }
             case LIKE_POST, LIKE_POST_CANCEL -> {
                 return new StringBuffer()
+                        .append(RedisKeyPrefix.MEMBER_ACTIVITY_KAFKA_EVENT.getKeyPrefix())
                         .append(activityType.getCode()).append("###") // redis 에서 중복 메시지 여부 구분을 위해 추가
                         .append(event.getPostId()).append("###")
                         .append(event.getMemberId())
