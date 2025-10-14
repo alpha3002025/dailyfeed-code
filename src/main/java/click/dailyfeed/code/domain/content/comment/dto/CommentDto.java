@@ -41,6 +41,7 @@ public class CommentDto {
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class Comment {
         private Long id;
+        private Boolean liked;
         private String content;
         private Long authorId;
         private String authorName;
