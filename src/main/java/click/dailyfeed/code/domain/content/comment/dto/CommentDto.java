@@ -39,7 +39,7 @@ public class CommentDto {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    public static class ReplyComment {
+    public static class Comment {
         private Long id;
         private String content;
         private Long authorId;
