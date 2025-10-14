@@ -8,6 +8,6 @@ public class MessageProperties {
     public static class KO {
         public static final String DELETED_USER = "탈퇴한 사용자";
         public static final String DELETED_HANDLE = "deleted";
-        public static final String AVATAR_URL = null;
+        public static final String NO_AVATAR_URL = null;
     }
 }
