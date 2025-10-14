@@ -60,7 +60,7 @@ public class PostDto {
         private String authorName;
         private String authorHandle;
         private String authorAvatarUrl;
-        private Long viewCount; // TODO SEASON 2
+        private Long viewCount;
         private Long likeCount;
         private Long commentCount;
         private Boolean liked;
