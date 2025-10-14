@@ -3,6 +3,7 @@ package click.dailyfeed.code.domain.content.comment.dto;
 import click.dailyfeed.code.domain.content.comment.type.CommentActivityType;
 import click.dailyfeed.code.domain.content.comment.type.CommentLikeType;
 import click.dailyfeed.code.domain.member.member.dto.MemberProfileDto;
+import click.dailyfeed.code.global.menu.MessageProperties;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -78,6 +79,13 @@ public class CommentDto {
 
             // 자식 댓글들의 작성자 정보도 설정
             this.children.forEach(child -> child.updateAuthorRecursively(authorMap));
+        }
+
+        public void updateDeletedAuthor() {
+            this.authorId = null;
+            this.authorName = MessageProperties.KO.DELETED_USER;
+            this.authorHandle = MessageProperties.KO.DELETED_HANDLE;
+            this.authorAvatarUrl = MessageProperties.KO.AVATAR_URL;
         }
     }
 
