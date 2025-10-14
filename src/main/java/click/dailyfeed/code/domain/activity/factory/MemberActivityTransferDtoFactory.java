@@ -100,6 +100,14 @@ public class MemberActivityTransferDtoFactory {
                         .append(event.getMemberId())
                         .toString();
             }
+            case LIKE_COMMENT, LIKE_COMMENT_CANCEL -> {
+                return new StringBuffer()
+                        .append(RedisKeyPrefix.MEMBER_ACTIVITY_KAFKA_EVENT.getKeyPrefix())
+                        .append(activityType.getCode()).append("###") // redis 에서 중복 메시지 여부 구분을 위해 추가
+                        .append(event.getCommentId()).append("###")
+                        .append(event.getMemberId())
+                        .toString();
+            }
         }
         return null;
     }
