@@ -5,12 +5,12 @@ import lombok.Getter;
 
 @Getter
 public class KafkaDLQRedisNetworkErrorException extends KafkaException {
-    private final String redisKey;
+    private final String messageKey;
     private final String payload;
 
     public KafkaDLQRedisNetworkErrorException(String key, String payload) {
         super(KafkaExceptionCode.KAFKA_DLQ_REDIS_NETWORK_ERROR);
-        this.redisKey = key;
+        this.messageKey = key;
         this.payload = payload;
     }
 }
