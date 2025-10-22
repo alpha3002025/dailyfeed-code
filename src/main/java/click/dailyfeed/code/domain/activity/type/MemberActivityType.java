@@ -32,6 +32,11 @@ public enum MemberActivityType {
     private final String code;
     private final String message;
 
+    @Getter
+    public enum Category {
+        POST, COMMENT, POST_LIKE, COMMENT_LIKE, MEMBER
+    }
+
     public static final EnumSet<MemberActivityType> postEventTypes = EnumSet.of(
             POST_CREATE,
             POST_UPDATE,
@@ -63,6 +68,5 @@ public enum MemberActivityType {
             MEMBER_LOGIN,
             MEMBER_SIGNUP
     );
-
 
 }
