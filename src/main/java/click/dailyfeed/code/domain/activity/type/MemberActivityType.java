@@ -34,8 +34,24 @@ public enum MemberActivityType {
 
     @Getter
     public enum Category {
-        POST, COMMENT, POST_LIKE, COMMENT_LIKE, MEMBER
+        POST, COMMENT, POST_LIKE, COMMENT_LIKE, MEMBER, UNDEFINED
     }
+
+    public static Category resolveCategory(MemberActivityType type) {
+        if(postEventTypes.contains(type)) {
+            return Category.POST;
+        } else if (commentEventTypes.contains(type)) {
+            return Category.COMMENT;
+        } else if (postLikeEventTypes.contains(type)) {
+            return Category.POST_LIKE;
+        } else if (commentLikeEventTypes.contains(type)) {
+            return Category.COMMENT_LIKE;
+        } else if (memberEventTypes.contains(type)) {
+            return Category.MEMBER;
+        }
+        return Category.UNDEFINED;
+    }
+
 
     public static final EnumSet<MemberActivityType> postEventTypes = EnumSet.of(
             POST_CREATE,
