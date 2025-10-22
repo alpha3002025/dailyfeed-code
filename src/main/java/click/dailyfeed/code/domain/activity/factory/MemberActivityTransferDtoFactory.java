@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class MemberActivityTransferDtoFactory {
-    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSS");
+    public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSS");
 
     public static MemberActivityTransportDto.MemberActivityEvent newPostMemberActivityTransportDto(Long memberId, Long postId, MemberActivityType activityType, LocalDateTime now) {
         return MemberActivityTransportDto.MemberActivityEvent.builder()
