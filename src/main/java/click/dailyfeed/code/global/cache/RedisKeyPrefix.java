@@ -12,6 +12,17 @@ public enum RedisKeyPrefix {
     // member
     MEMBER_AUTHENTICATION_BLACKLIST("member:authentication:blacklist:"),
     MEMBER_AUTHENTICATION_REVOKED_REFRESH("member:authentication:revoked_refresh:"),
+    // member/item
+    MEMBER_API_MEMBERS_GET_MEMBER_BY_ID(RedisCacheableConstant.MemberPrefix.API_GET_MEMBER_BY_ID),
+    MEMBER_API_MEMBERS_GET_MEMBER_PROFILE_BY_ID(RedisCacheableConstant.MemberPrefix.API_GET_MEMBER_PROFILE_BY_ID),
+    MEMBER_API_MEMBERS_PROFILE_SUMMARY_BY_ID(RedisCacheableConstant.MemberPrefix.API_GET_MEMBER_PROFILE_SUMMARY_BY_ID),
+    // member/handle/exists
+    MEMBER_API_MEMBERS_GET_MEMBER_HANDLE_EXISTS(RedisCacheableConstant.MemberPrefix.API_GET_MEMBER_HANDLE_EXISTS),
+    // query
+    MEMBER_API_MEMBERS_INTERNAL_LIST_MEMBERS_BY_IDS_IN(RedisCacheableConstant.MemberPrefix.API_INTERNAL_LIST_MEMBERS_BY_IDS_IN),
+
+    // follow
+    MEMBER_API_FOLLOW_INTERNAL_LIST_FOLLOWING_MEMBERS_BY_MEMBER_ID(RedisCacheableConstant.FollowPrefix.API_INTERNAL_LIST_FOLLOWING_MEMBERS_BY_MEMBER_ID),
 
     // member_activity
     MEMBER_ACTIVITY_KAFKA_EVENT("member_activity:kafka_event:"),
@@ -35,6 +46,18 @@ public enum RedisKeyPrefix {
 
     private final String keyPrefix;
 
+    public static final EnumSet<RedisKeyPrefix> MEMBER_INTERNAL_QUERY_PREFIXES = EnumSet.of(
+            MEMBER_API_MEMBERS_INTERNAL_LIST_MEMBERS_BY_IDS_IN,
+            MEMBER_API_FOLLOW_INTERNAL_LIST_FOLLOWING_MEMBERS_BY_MEMBER_ID
+    );
+
+    public static final EnumSet<RedisKeyPrefix> MEMBER_API_GET_ITEM_PREFIXES = EnumSet.of(
+            MEMBER_API_MEMBERS_GET_MEMBER_BY_ID,
+            MEMBER_API_MEMBERS_GET_MEMBER_PROFILE_BY_ID,
+            MEMBER_API_MEMBERS_PROFILE_SUMMARY_BY_ID,
+            MEMBER_API_MEMBERS_GET_MEMBER_HANDLE_EXISTS
+    );
+
     public static final EnumSet<RedisKeyPrefix> TIMELINE_API_PREFIXES = EnumSet.of(
             TIMELINE_API_POSTS_FOLLOWINGS_RECENT_POSTS,
             TIMELINE_API_POSTS_MOST_COMMENTED,
@@ -44,7 +67,19 @@ public enum RedisKeyPrefix {
             TIMELINE_API_POSTS_RECENT_ACTIVITIES
     );
 
-    public static List<String> getTimelineApiNamespaces(){
+    public static class Member{
+        public static String MEMBER_BY_ID = MEMBER_API_MEMBERS_GET_MEMBER_BY_ID.getKeyPrefix();
+    }
+
+    public static final List<String> getMemberInternalQueryNamespaces(){
+        return MEMBER_INTERNAL_QUERY_PREFIXES.stream().map(RedisKeyPrefix::getKeyPrefix).toList();
+    }
+
+    public static final List<String> getMemberApiNamespaces(){
+        return MEMBER_API_GET_ITEM_PREFIXES.stream().map(RedisKeyPrefix::getKeyPrefix).toList();
+    }
+
+    public static final List<String> getTimelineApiNamespaces(){
         return TIMELINE_API_PREFIXES.stream().map(RedisKeyPrefix::getKeyPrefix).toList();
     }
 }
